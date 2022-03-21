@@ -1,60 +1,38 @@
-const returnMinimum = (min, max) => {
-  if (min < max) {
-    return min;
-  } else {
-    return max;
-  }
-};
+["A", "B"].forEach((l) => console.log(l));
+const users = [
+  {
+    id: 1,
+    name: "Marco",
+    lastname: "Paul",
+    ville: "Abidjan",
+    population: 100,
+  },
+  {
+    id: 2,
+    name: "Jason",
+    lastname: "Park",
+    ville: "Abidjan",
+    population: 500,
+  },
+  {
+    id: 3,
+    name: "Kouame",
+    lastname: "Régis",
+    ville: "Bouaké",
+    population: 1000,
+  },
+];
 
-// console.log(returnMinimum(0, 10));
-// console.log(returnMinimum(0, -10));
+const data = users.reduce((previousValue, currentValue) => {
+  return previousValue + currentValue.population;
+}, 0);
 
-const parite = (number) => {
-  if (number < 0) {
-    return "??";
-  } else {
-    if (number % 2 == 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-};
+const findOneData = users.findIndex((el) => {
+  return el.population > 400;
+});
 
-const pariteRecursive = (number) => {
-  if (number % 2 == 0) {
-    return true;
-  } else if (number % 2 == 1) {
-    return false;
-  } else if (number > 0) {
-    return pariteRecursive(number - 2);
-  } else {
-    return pariteRecursive(-number);
-  }
-};
+const countries = [14, 20, 50, 100];
 
-// console.log(pariteRecursive(50));
-// console.log(pariteRecursive(75));
-// console.log(pariteRecursive(-1));
-let countB = 0;
-const countBs = (word) => {
-  for (let init = 0; init < word.length; init++) {
-    if (word[init] == "B") {
-      countB++;
-    }
-  }
-  return countB;
-};
+const result = (res) => res > 10;
 
-console.log(countBs("BBC"));
-let countLetter = 0;
-const countChar = (word, letter) => {
-  for (let init = 0; init < word.length; init++) {
-    if (word[init] == letter) {
-      countLetter++;
-    }
-  }
-  return countLetter;
-};
-
-console.log(countChar("kakkerlak", "k"));
+console.log(countries.every(result));
