@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LET & CONST</title>
+</head>
+<body>
+    <ul id="app"></ul>
+    <script>
+        const app = document.querySelector("#app");
+        const colors = ['red','green','black','orange','purple'];
+        let html="";
+        colors.forEach(element => {
+            html+=`<li>${element.toUpperCase()}</li>`;
+        });
+        app.innerHTML=html;
+        for (let item of colors) {
+            console.log(item);
+        }
+        for(let i=0; i<colors.length;i++){
+            console.log(colors[i]);
+        }
+    </script>
+</body>
+</html>
